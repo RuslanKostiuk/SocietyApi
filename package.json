@@ -6,7 +6,6 @@
   "dependencies": {
     "@types/bcrypt": "^2.0.0",
     "@types/cors": "^2.8.4",
-    "@types/mongoose": "^5.0.16",
     "@types/nodemailer": "^4.6.0",
     "bcrypt": "^2.0.1",
     "body-parser": "^1.18.3",
@@ -30,5 +29,9 @@
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\""
   },
   "author": "Ruslan Kostiuk",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mongodb": "^3.1.1",
+    "@types/mongoose": "^5.2.0"
+  }
 }

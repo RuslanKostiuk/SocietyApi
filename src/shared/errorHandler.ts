@@ -9,8 +9,12 @@ export class SocietyError extends Error {
     }
 }
 
-export class ErrorBuilder {
+export class ErrorHandler {
     public static BuildError(errorStatus: ErrorStatuses, message?: string): SocietyError {
+        console.log(errorStatus);
+        if (message) {
+            console.log(message);
+        }
         return new SocietyError(errorStatus, message);
     }
 }

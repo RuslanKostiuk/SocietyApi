@@ -1,6 +1,5 @@
-import { Inject, Singleton } from 'typescript-ioc';
-import {IUser} from "../models/userModel/IUser";
-import User = require ("../models/userModel/User");
+import {Singleton} from 'typescript-ioc';
+import {IUserModel, User} from "../models/userModel/UserSchema";
 import {IENV} from "../environment/ienv";
 import passportJWT = require("passport-jwt");
 import passport = require("passport");
@@ -19,7 +18,7 @@ export default class JWTPassport {
         this.jwtOptions["secretOrKey"] = env.user_secret;
 
         const strategy = new JwtStrategy(this.jwtOptions, async (jwt_payload, next) => {
-            const user = await await User.findById(jwt_payload.id);
+            const user: IUserModel = await User.findById(jwt_payload.id);
             if (user) {
                 next(undefined, user)
             } else {

@@ -32,7 +32,7 @@ export class ApiServer {
      */
     private config(): void {
         // Native Express configuration
-        this.app.use( bodyParser.urlencoded( { extended: false } ) );
+        this.app.use( bodyParser.urlencoded( { extended: true } ) );
         this.app.use( bodyParser.json( { limit: '1mb' } ) );
         this.app.use(express.static(path.join(__dirname, 'public')));
         this.app.use(cors());

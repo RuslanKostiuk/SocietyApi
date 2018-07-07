@@ -46,4 +46,6 @@ export interface IUser {
     gender: string,
     wall: any,
     verified: boolean;
+    createdAt: Date;
+    updatedAt: Date;
 }

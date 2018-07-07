@@ -8,13 +8,18 @@ const env: IENV = require("../../environment/dev.json");
 
 @Path("/user")
 export class Authentication {
+    authRegCtrl: AuthRegistrationController;
+
+    constructor() {
+        this.authRegCtrl = new AuthRegistrationController();
+    }
 
     @Path("/authenticate")
     @POST
     public async authenticate(authData: {email: string, password: string}) {
         let responce: Response;
         try {
-            const user: IUser = await AuthRegistrationController.authenticateUser(authData.email, authData.password);
+            const user: IUser = await this.authRegCtrl.authenticateUser(authData.email, authData.password);
             responce = ResponseBuider.BuildResponse(user);
 
         } catch (e) {

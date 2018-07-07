@@ -1,36 +1,36 @@
-import {IUser} from "../models/userModel/IUser";
-import User = require ("../models/userModel/User");
+import {IUserModel, User} from "../models/userModel/UserSchema";
 import {compareDecriptedPassword, decryptPassword} from "../utils/utils";
 import {ResponseBuider, Response} from "../shared/response";
-import {ErrorBuilder, SocietyError} from "../shared/errorBuilder";
+import {ErrorHandler, SocietyError} from "../shared/errorHandler";
 import {ErrorStatuses} from "../shared/enums";
 
 export class AuthRegistrationController {
-    private static dbUser: any;
+    private dbUser: IUserModel;
 
-    public static async saveUser(user: IUser): Promise<Response> {
+    public async saveUser(user: IUserModel): Promise<IUserModel> {
         try {
             const decryptedPassword: string = await decryptPassword(user.password);
             user.password = decryptedPassword;
             this.dbUser = new User(user);
-            let savedUser: any = await this.dbUser.save();
-            return ResponseBuider.BuildResponse(savedUser);
+            let savedUser: IUserModel = await this.dbUser.save();
+            return savedUser;
         } catch (e) {
-            throw ErrorBuilder.BuildError(ErrorStatuses.saveError, e.message);
+            console.log(e.message);
+            throw ErrorHandler.BuildError(ErrorStatuses.saveError, e.message);
         }
     }
 
-    public static async authenticateUser(email, password): Promise<IUser> {
+    public async authenticateUser(email, password): Promise<IUserModel> {
         try {
-            const foundUser: IUser = await User.findOne({email: email});
+            const foundUser: IUserModel = await User.findOne({email: email});
             if (!foundUser) {
-                throw ErrorBuilder.BuildError(ErrorStatuses.userNotFound);
+                throw ErrorHandler.BuildError(ErrorStatuses.userNotFound);
             }
 
             const isCorrectPassword: boolean = await compareDecriptedPassword(foundUser.password, password);
 
             if (!isCorrectPassword) {
-                throw ErrorBuilder.BuildError(ErrorStatuses.passwordNotCorrect);
+                throw ErrorHandler.BuildError(ErrorStatuses.passwordNotCorrect);
             }
 
             return foundUser;
@@ -38,7 +38,7 @@ export class AuthRegistrationController {
         } catch (e) {
             let error: SocietyError;
             if (e.status !== ErrorStatuses.passwordNotCorrect || e.status !== ErrorStatuses.userNotFound) {
-                error = ErrorBuilder.BuildError(ErrorStatuses.unknown, e.message);
+                error = ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);
             } else {
                 error = e;
             }

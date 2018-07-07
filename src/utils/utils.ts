@@ -1,6 +1,6 @@
 import * as bcrypt from "bcrypt";
 import * as nodemailer from "nodemailer";
-import {ErrorBuilder} from "../shared/errorBuilder";
+import {ErrorHandler} from "../shared/errorHandler";
 import {ErrorStatuses} from "../shared/enums";
 import {IENV} from "../environment/ienv";
 import * as jwt from 'jsonwebtoken';
@@ -32,7 +32,7 @@ export async function SandEmailMessage(recipientEmail: string, message: string, 
     try {
         await smtp.sendMail(mailOptions);
     } catch (e) {
-        throw ErrorBuilder.BuildError(ErrorStatuses.emailError, e.message);
+        throw ErrorHandler.BuildError(ErrorStatuses.emailError, e.message);
     }
 }
 

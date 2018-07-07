@@ -1,7 +1,10 @@
-import { Schema, model} from "mongoose"
+import { Document, Schema, Model, model} from "mongoose";
+import {IUser} from "./IUser";
 const db = require("../../shared/dbConnection");
 
-export var UserSchema: Schema = db.Schema({
+export interface IUserModel extends IUser, Document {}
+
+export let UserSchema: Schema = db.Schema({
     email: {
         type: String,
         required: [true, "loginRequired"],
@@ -65,9 +68,18 @@ export var UserSchema: Schema = db.Schema({
     videos: [{ type: String }],
     gender: { type: String },
     wall: [{ type: Object }],
-    verified: { type: Boolean, default: false }
+    verified: { type: Boolean, default: false },
+    createdAt: Date,
+    updatedAt: Date
 });
 
-const userSchema = model("User", UserSchema);
-module.exports = userSchema;
+// UserSchema.pre("save", function(next) {
+//     let now = new Date();
+//     if (!this.createdAt) {
+//         this.createdAt = now;
+//     }
+//     next();
+// });
+
+export const User: Model<IUserModel> = model<IUserModel>("User", UserSchema);
 
