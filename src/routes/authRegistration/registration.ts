@@ -1,5 +1,5 @@
-import {Path, POST} from 'typescript-rest';
-import {IUserModel} from "../../models/userModel/UserSchema";
+import {GET, Path, POST, QueryParam} from 'typescript-rest';
+import {IUserModel, User} from "../../models/userModel/UserSchema";
 import {AuthRegistrationController} from "../../controllers/authRegistrationController";
 import {ErrorStatuses, RegistrationTypes} from "../../shared/enums";
 import {ErrorHandler, SocietyError} from "../../shared/errorHandler";
@@ -40,4 +40,17 @@ export class Registration {
         }
     }
 
+    @GET
+    @Path("/verify")
+    public async verify(@QueryParam("token") token: string): Promise<Response> {
+        let response: Response;
+        try {
+            let user: IUserModel = await User.findById(token);
+            response = ResponseBuider.BuildResponse()
+        } catch (e) {
+            throw ErrorHandler.BuildError(ErrorStatuses.userNotFound, e.message);
+        } finally {
+            return response;
+        }
+    }
 }
