@@ -4,7 +4,7 @@ import {AuthRegistrationController} from "../../controllers/authRegistrationCont
 import {ErrorStatuses, RegistrationTypes} from "../../shared/enums";
 import {ErrorHandler, SocietyError} from "../../shared/errorHandler";
 import {ResponseBuider, Response} from "../../shared/response";
-import {SandEmailMessage} from "../../utils/utils";
+import {generateToken, SandEmailMessage} from "../../utils/utils";
 import {IENV} from "../../environment/ienv";
 import S3Handler from "../../utils/s3Handler";
 
@@ -51,7 +51,11 @@ export class Registration {
             if (user) {
                 response = ResponseBuider.BuildResponse();
                 await s3.createBucket(user._id);
-                response = ResponseBuider.BuildResponse("Storrage Created")
+                user.password = "";
+                response = ResponseBuider.BuildResponse({
+                    user: user,
+                    token: generateToken(user._id)
+                });
             }
         } catch (e) {
             let error: SocietyError = ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);

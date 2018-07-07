@@ -8,13 +8,13 @@ export default class S3Handler {
     private fileBaseUrl: string = "http://localhost:4569";
 
     constructor() {
-       this.s3 = new AWS.S3({
-           s3ForcePathStyle:true,
-           endpoint: this.fileBaseUrl,
-           sslEnabled: false,
-           accessKeyId: "123",
-           secretAccessKey: "abc"
-       })
+        this.s3 = new AWS.S3({
+            s3ForcePathStyle: true,
+            endpoint: this.fileBaseUrl,
+            sslEnabled: false,
+            accessKeyId: "123",
+            secretAccessKey: "abc"
+        })
     }
 
     public async saveToBucket(data: Buffer, fileOptions: FileOptions): Promise<string> {
