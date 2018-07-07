@@ -3,14 +3,17 @@ import {ErrorHandler} from "../shared/errorHandler";
 import {ErrorStatuses} from "../shared/enums";
 import {FileOptions} from "../shared/types";
 
-export class S3Handler {
+export default class S3Handler {
     private s3: AWS.S3;
     private fileBaseUrl: string = "http://localhost:4569";
 
     constructor() {
        this.s3 = new AWS.S3({
            s3ForcePathStyle:true,
-           endpoint: this.fileBaseUrl
+           endpoint: this.fileBaseUrl,
+           sslEnabled: false,
+           accessKeyId: "123",
+           secretAccessKey: "abc"
        })
     }
 
@@ -33,7 +36,7 @@ export class S3Handler {
         return `${this.fileBaseUrl}/${bucketPrefix}/${fileOptions.key}`;
     }
 
-    public async createBucket(bucketName: string): Promise<any> {
-        return await this.s3.createBucket({Bucket: `storrage/${bucketName}`});
+    public async createBucket(bucketName: string): Promise<void> {
+        await this.s3.createBucket({Bucket: "" + bucketName}).promise();
     }
 }

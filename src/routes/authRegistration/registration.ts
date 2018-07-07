@@ -6,6 +6,7 @@ import {ErrorHandler, SocietyError} from "../../shared/errorHandler";
 import {ResponseBuider, Response} from "../../shared/response";
 import {SandEmailMessage} from "../../utils/utils";
 import {IENV} from "../../environment/ienv";
+import S3Handler from "../../utils/s3Handler";
 
 const env: IENV = require("../../environment/dev.json");
 
@@ -44,11 +45,17 @@ export class Registration {
     @Path("/verify")
     public async verify(@QueryParam("token") token: string): Promise<Response> {
         let response: Response;
+        let s3: S3Handler = new S3Handler();
         try {
-            let user: IUserModel = await User.findById(token);
-            response = ResponseBuider.BuildResponse()
+            let user: IUserModel = await  User.findByIdAndUpdate(token, { verified: true });
+            if (user) {
+                response = ResponseBuider.BuildResponse();
+                await s3.createBucket(user._id);
+                response = ResponseBuider.BuildResponse("Storrage Created")
+            }
         } catch (e) {
-            throw ErrorHandler.BuildError(ErrorStatuses.userNotFound, e.message);
+            let error: SocietyError = ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);
+            response = ResponseBuider.BuildResponse(error, 500);
         } finally {
             return response;
         }
