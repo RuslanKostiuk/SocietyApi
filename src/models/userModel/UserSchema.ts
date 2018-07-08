@@ -44,27 +44,7 @@ export let UserSchema: Schema = db.Schema({
         id_friend: { type: String },
         friendInviteStatus: { type: Number }
     }],
-    conversations: [{
-        name: { type: String },
-        messages: [{
-            id_sender: { type: String },
-            ids_listeners: [{ type: String }],
-            text: { type: String }
-        }]
-    }],
-    albums: [{
-        name: String,
-        creationDate: Date,
-        lastUpdateDate: Date,
-        photos: [{
-            path: String,
-            creationDate: Date,
-            idAlbum: String,
-            idsComments: [String],
-            likes: [String],
-            isCurrent: Boolean
-        }]
-    }],
+    conversatinsIds: [String],
     videos: [{ type: String }],
     gender: { type: String },
     wall: [{ type: Object }],
@@ -72,14 +52,6 @@ export let UserSchema: Schema = db.Schema({
     createdAt: Date,
     updatedAt: Date
 });
-
-// UserSchema.pre("save", function(next) {
-//     let now = new Date();
-//     if (!this.createdAt) {
-//         this.createdAt = now;
-//     }
-//     next();
-// });
 
 export const User: Model<IUserModel> = model<IUserModel>("User", UserSchema);
 

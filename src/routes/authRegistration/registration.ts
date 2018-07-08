@@ -52,10 +52,7 @@ export class Registration {
                 response = ResponseBuider.BuildResponse();
                 await s3.createBucket(user._id);
                 user.password = "";
-                response = ResponseBuider.BuildResponse({
-                    user: user,
-                    token: generateToken(user._id)
-                });
+                response = ResponseBuider.BuildResponse("<h1>Registration complete<h1>");
             }
         } catch (e) {
             let error: SocietyError = ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);

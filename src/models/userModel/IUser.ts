@@ -21,27 +21,7 @@ export interface IUser {
         idFriend: string,
         friendInviteStatus: FriendIviteStatuses
     }],
-    conversations: [{
-        name: string,
-        messages: [{
-            id_sender: string,
-            ids_listeners: Array<string>,
-            text: string
-        }]
-    }],
-    albums: [{
-        name: string,
-        creationDate: Date,
-        lastUpdateDate: Date,
-        photos: [{
-            path: string,
-            creationDate: Date,
-            idAlbum: string,
-            idsComments: Array<string>,
-            likes: Array<string>,
-            isCurrent: boolean
-        }],
-    }],
+    conversatinsIds: Array<string>,
     videos: string,
     gender: string,
     wall: any,

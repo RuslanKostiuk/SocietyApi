@@ -16,7 +16,7 @@ export class Authentication {
         this.authRegCtrl = new AuthRegistrationController();
     }
 
-    @Path("/authenticate")
+    @Path("/login")
     @POST
     public async authenticate(authData: {email: string, password: string}) {
         let responce: Response;
