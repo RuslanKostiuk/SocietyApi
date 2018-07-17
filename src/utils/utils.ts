@@ -17,7 +17,11 @@ export async function decryptPassword(password: string): Promise<string> {
 }
 
 export async function compareDecriptedPassword(decrypted: string, encrypted: string): Promise<boolean> {
-    return await bcrypt.compare(decrypted, encrypted);
+    try {
+        return await bcrypt.compare(encrypted, decrypted);
+    } catch (e) {
+        throw e;
+    }
 }
 
 export async function SandEmailMessage(recipientEmail: string, message: string, subject: string): Promise<any> {

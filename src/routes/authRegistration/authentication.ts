@@ -5,6 +5,8 @@ import {IUser} from "../../models/userModel/IUser";
 import {ResponseBuider, Response} from "../../shared/response";
 import {generateToken} from "../../utils/utils";
 import {IUserModel} from "../../models/userModel/UserSchema";
+import {ErrorHandler} from "../../shared/errorHandler";
+import {ErrorStatuses} from "../../shared/enums";
 
 const env: IENV = require("../../environment/dev.json");
 
@@ -16,21 +18,19 @@ export class Authentication {
         this.authRegCtrl = new AuthRegistrationController();
     }
 
-    @Path("/login")
+    @Path("/signIn")
     @POST
     public async authenticate(authData: {email: string, password: string}) {
-        let responce: Response;
         try {
+            let responce: Response;
             const user: IUserModel = await this.authRegCtrl.authenticateUser(authData.email, authData.password);
             responce = ResponseBuider.BuildResponse({
-                user: user,
                 token: generateToken(user._id)
             });
 
-        } catch (e) {
-            responce = ResponseBuider.BuildResponse(e, 404);
-        } finally {
             return responce;
+        } catch (e) {
+            throw e;
         }
     }
 

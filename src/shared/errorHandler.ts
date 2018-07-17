@@ -1,20 +1,38 @@
 import {ErrorStatuses} from "./enums";
+import {UnauthorizedError} from "typescript-rest/dist/server-errors";
 
-export class SocietyError extends Error {
-    errorStatus: ErrorStatuses;
-
-    constructor(errorStasus: ErrorStatuses, message?: string) {
-        super(message);
-        this.errorStatus = errorStasus;
-    }
-}
+// export class SocietyError extends Error {
+//     errorStatus: ErrorStatuses;
+//
+//     constructor(errorStasus: ErrorStatuses, message?: string) {
+//         if (message) {
+//             super(message);
+//         } else {
+//             super(errorStasus);
+//         }
+//         this.errorStatus = errorStasus;
+//     }
+// }
 
 export class ErrorHandler {
-    public static BuildError(errorStatus: ErrorStatuses, message?: string): SocietyError {
-        console.log(errorStatus);
-        if (message) {
-            console.log(message);
+    public static BuildError(errorStatus: ErrorStatuses, error?: Error): Error {
+        console.error(errorStatus);
+        let e: Error;
+        switch (errorStatus) {
+            case ErrorStatuses.userNotFound:
+            case ErrorStatuses.passwordNotCorrect:
+            case ErrorStatuses.emailError:
+                e = new UnauthorizedError();
+                e.message = errorStatus;
+                break;
+            case ErrorStatuses.saveError:
+            case ErrorStatuses.registrationError:
+            case ErrorStatuses.s3Error:
+            case ErrorStatuses.unknown:
+                e = error;
+                break;
         }
-        return new SocietyError(errorStatus, message);
+
+        return e || error;
     }
 }

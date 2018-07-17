@@ -1,7 +1,7 @@
 import {IUserModel, User} from "../models/userModel/UserSchema";
 import {compareDecriptedPassword, decryptPassword} from "../utils/utils";
 import {ResponseBuider, Response} from "../shared/response";
-import {ErrorHandler, SocietyError} from "../shared/errorHandler";
+import {ErrorHandler} from "../shared/errorHandler";
 import {ErrorStatuses} from "../shared/enums";
 
 export class AuthRegistrationController {
@@ -21,30 +21,22 @@ export class AuthRegistrationController {
     }
 
     public async authenticateUser(email, password): Promise<IUserModel> {
-        try {
-            const foundUser: IUserModel = await User.findOne({email: email});
-            if (!foundUser) {
-                throw ErrorHandler.BuildError(ErrorStatuses.userNotFound);
-            }
-
-            const isCorrectPassword: boolean = await compareDecriptedPassword(foundUser.password, password);
-
-            if (!isCorrectPassword) {
-                throw ErrorHandler.BuildError(ErrorStatuses.passwordNotCorrect);
-            }
-
-            return foundUser;
-
-        } catch (e) {
-            let error: SocietyError;
-            if (e.status !== ErrorStatuses.passwordNotCorrect || e.status !== ErrorStatuses.userNotFound) {
-                error = ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);
-            } else {
-                error = e;
-            }
-
-            throw error;
+        let error: Error;
+        const foundUser: IUserModel = await User.findOne({email});
+        if (!foundUser) {
+            error = ErrorHandler.BuildError(ErrorStatuses.userNotFound);
         }
 
+        const isCorrectPassword: boolean = await compareDecriptedPassword(foundUser.password, password);
+
+        if (!isCorrectPassword) {
+            error = ErrorHandler.BuildError(ErrorStatuses.passwordNotCorrect);
+        }
+
+        if (!error) {
+            return foundUser;
+        } else {
+            throw error;
+        }
     }
 }
