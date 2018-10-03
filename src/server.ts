@@ -4,8 +4,9 @@ import * as http from "http";
 import * as path from "path";
 import * as cors from "cors";
 import * as bodyParser from "body-parser";
-import authRegisration from "./routes/authRegistration";
+import routes from "./routes/Routes";
 import {IENV} from "./environment/ienv";
+import JWTPassport from "./controllers/passport";
 
 const env: IENV = require("./environment/dev.json");
 
@@ -14,13 +15,18 @@ export class ApiServer {
     private app: express.Application;
     private server: http.Server = null;
     public PORT: number = env.port;
+    private jwt: JWTPassport = new JWTPassport();
 
     constructor() {
         this.app = express();
+        this.app.use(this.jwt.getPassport().initialize());
         this.config();
 
+        this.app.use("/user", this.jwt.getPassport().authenticate("jwt", {
+                session: false
+            }));
         Server.useIoC();
-        Server.buildServices(this.app, ...authRegisration);
+        Server.buildServices(this.app, ...routes);
 
         // TODO: enable for Swagger generation error
         // Server.loadServices(this.app, 'routes/*', __dirname);

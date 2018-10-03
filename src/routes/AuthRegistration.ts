@@ -1,25 +1,24 @@
 import {GET, Path, POST, QueryParam} from 'typescript-rest';
-import {IUserModel, User} from "../../models/userModel/UserSchema";
-import {AuthRegistrationController} from "../../controllers/authRegistrationController";
-import {ErrorStatuses, RegistrationTypes} from "../../shared/enums";
-import {ErrorHandler} from "../../shared/errorHandler";
-import {ResponseBuider, Response} from "../../shared/response";
-import {generateToken, SandEmailMessage} from "../../utils/utils";
-import {IENV} from "../../environment/ienv";
-import S3Handler from "../../utils/s3Handler";
+import {IUserModel, User} from "../models/userModel/UserSchema";
+import {AuthRegistrationController} from "../controllers/AuthRegistrationController";
+import {ErrorStatuses, RegistrationTypes} from "../shared/enums";
+import {ErrorHandler} from "../shared/errorHandler";
+import {ResponseBuider, Response} from "../shared/response";
+import {generateToken, SandEmailMessage} from "../utils/utils";
+import {IENV} from "../environment/ienv";
+import S3Handler from "../utils/s3Handler";
+import {UnauthorizedError} from "typescript-rest/dist/server-errors";
 
-const env: IENV = require("../../environment/dev.json");
+const env: IENV = require("../environment/dev.json");
 
-@Path("/user")
-export class Registration {
-    private authRegCtrl: AuthRegistrationController;
+export default class AuthRegistration {
+    private authRegCtrl: AuthRegistrationController = new AuthRegistrationController();
 
     @POST
     @Path("/registration")
     public async registration(user: IUserModel): Promise<Response> {
         let response: Response;
         try {
-            this.authRegCtrl = new AuthRegistrationController();
             let savedUser: IUserModel = await this.authRegCtrl.saveUser(user);
             let mailMessage: string = "Дякуємо, що зареєструвалися в Львівській соціальній мережі \"Lviv Society\"." +
                 "Ми завжди раді новим людям. Щоб підтвердити реєстрацію будь ласка перейдіть по посиланню " +
@@ -55,8 +54,27 @@ export class Registration {
                 return response;
             }
         } catch (e) {
-            let error: Error = ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);
-            throw error;
+            throw ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);
+        }
+    }
+
+    @Path("/signIn")
+    @POST
+    public async authenticate(authData: { email: string, password: string }): Promise<Response> {
+        try {
+            let responce: Response;
+            const user: IUserModel = await this.authRegCtrl.authenticateUser(authData.email, authData.password);
+            if (!user.verified) {
+                throw new UnauthorizedError();
+            } else {
+                responce = ResponseBuider.BuildResponse({
+                    token: generateToken(user._id)
+                });
+
+                return responce;
+            }
+        } catch (e) {
+            throw ErrorHandler.BuildError(ErrorStatuses.notVerified, e);
         }
     }
 }

@@ -11,36 +11,34 @@ export default class JWTPassport {
     private jwtOptions: any = {};
 
     constructor() {
-        const ExtractJwt = passportJWT.ExtractJwt;
-        const JwtStrategy = passportJWT.Strategy;
+        let ExtractJwt = passportJWT.ExtractJwt;
+        let JwtStrategy = passportJWT.Strategy;
 
         this.jwtOptions["jwtFromRequest"] = ExtractJwt.fromAuthHeaderAsBearerToken();
         this.jwtOptions["secretOrKey"] = env.user_secret;
 
-        const strategy = new JwtStrategy(this.jwtOptions, async (jwt_payload, next) => {
-            const user: IUserModel = await User.findById(jwt_payload.id);
-            if (user) {
-                next(undefined, user)
-            } else {
-                next(undefined, false)
+        let strategy = new JwtStrategy(this.jwtOptions, async (jwtPayload, next) => {
+            try {
+                let user: IUserModel = await User.findById(jwtPayload.id);
+                if (user) {
+                    next(null, user)
+                } else {
+                    next(null, false)
+                }
+            } catch (e) {
+                next(e, false);
             }
         });
 
         this.passport = passport;
         this.passport.use(strategy);
-
-        this.passport.serializeUser((userModel, done) => done(undefined, userModel.id));
-        this.passport.deserializeUser(async (id, done) => {
-            const user = await User.findById(id);
-            user ? done(undefined, user) : done(user.errors, undefined)
-        })
     }
 
-    getJwtOptions(): any {
+    public getJwtOptions(): any {
         return this.jwtOptions
     }
 
-    getPassport(): any {
+    public getPassport() {
         return this.passport
     }
 }

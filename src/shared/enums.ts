@@ -19,7 +19,8 @@ export enum ErrorStatuses {
     userNotFound = "User not found",
     passwordNotCorrect = "Password not correct",
     unknown = "Unexpected error",
-    s3Error = "s3 Error"
+    s3Error = "s3 Error",
+    notVerified = "Email not comfirmed"
 }
 
 export enum RegistrationTypes {
