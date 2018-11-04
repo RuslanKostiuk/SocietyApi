@@ -2,22 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e1053d1-86b8-485c-af42-40c36e516d36" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controllers/TokenController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/tokenModel/IRefreshToken.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/tokenModel/RefreshTokenSchema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/Token.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/passport.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/passport.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/userModel/IUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/userModel/IUser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/userModel/UserSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/userModel/UserSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/TokenController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/TokenController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/AuthRegistration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/AuthRegistration.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/UserInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/UserInfo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/dbConnection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/dbConnection.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/errorHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/errorHandler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/s3Handler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/s3Handler.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/utils.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,59 +22,11 @@
       <file leaf-file-name="AuthRegistration.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/AuthRegistration.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="60" column="33" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="33" />
+            <state relative-caret-position="319">
+              <caret line="91" column="57" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
               <folding>
-                <element signature="e#0#60#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TokenController.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/TokenController.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="51" column="15" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Token.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/routes/Token.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="response.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shared/response.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/UserController.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -94,8 +34,23 @@
       <file leaf-file-name="AuthRegistrationController.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-208">
+            <state relative-caret-position="51">
               <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TokenController.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controllers/TokenController.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,14 +139,14 @@
         <option value="$PROJECT_DIR$/src/models/tokenModel/IRefreshToken.ts" />
         <option value="$PROJECT_DIR$/dist/utils/utils.js" />
         <option value="$PROJECT_DIR$/src/shared/dbConnection.ts" />
-        <option value="$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts" />
         <option value="$PROJECT_DIR$/src/shared/utils.ts" />
         <option value="$PROJECT_DIR$/src/routes/Routes.ts" />
         <option value="$PROJECT_DIR$/src/models/tokenModel/RefreshTokenSchema.ts" />
         <option value="$PROJECT_DIR$/src/routes/UserInfo.ts" />
+        <option value="$PROJECT_DIR$/src/routes/Token.ts" />
+        <option value="$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts" />
         <option value="$PROJECT_DIR$/src/routes/AuthRegistration.ts" />
         <option value="$PROJECT_DIR$/src/controllers/TokenController.ts" />
-        <option value="$PROJECT_DIR$/src/routes/Token.ts" />
       </list>
     </option>
   </component>
@@ -233,6 +188,12 @@
               <item name="SocietyApiTypeScript" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SocietyApiTypeScript" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SocietyApiTypeScript" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -368,25 +329,25 @@
       <workItem from="1539115151565" duration="21892000" />
       <workItem from="1540307139978" duration="8110000" />
       <workItem from="1541090062760" duration="7180000" />
-      <workItem from="1541184384791" duration="18048000" />
+      <workItem from="1541184384791" duration="22216000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177478000" />
+    <option name="totallyTimeSpent" value="181646000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TypeScript" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20486936" />
+      <window_info anchor="bottom" id="TypeScript" order="5" weight="0.32919255" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20486936" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32919255" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32919255" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32919255" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.33913043" />
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -401,6 +362,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -423,13 +410,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/userModel/User.ts" />
     <entry file="file://$PROJECT_DIR$/src/models/userModel/IUserModel.ts" />
     <entry file="file://$PROJECT_DIR$/src/modules/mongoose.d.ts">
@@ -705,12 +685,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/UserInfo.ts">
+    <entry file="file://$PROJECT_DIR$/src/shared/response.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/Routes.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -722,20 +712,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/UserInfo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/passport.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
+        <state relative-caret-position="85">
           <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -746,44 +736,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/TokenController.ts">
+    <entry file="file://$PROJECT_DIR$/src/routes/Token.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="51" column="15" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
+        <state relative-caret-position="238">
+          <caret line="14" column="20" lean-forward="true" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/AuthRegistration.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="91" column="57" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-208">
+        <state relative-caret-position="51">
           <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/AuthRegistration.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="60" column="33" selection-start-line="60" selection-start-column="19" selection-end-line="60" selection-end-column="33" />
           <folding>
-            <element signature="e#0#60#0" expanded="true" />
+            <element signature="e#0#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/response.ts">
+    <entry file="file://$PROJECT_DIR$/src/controllers/TokenController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/Token.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        <state relative-caret-position="353">
+          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

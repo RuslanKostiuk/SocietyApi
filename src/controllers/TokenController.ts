@@ -1,10 +1,9 @@
 import {IENV} from "../environment/ienv";
 import * as jwt from 'jsonwebtoken';
 import uuid = require('uuid/v4');
-import {RefreshTokenSchema, RefreshToken, IRefreshTokenModel} from "../models/tokenModel/RefreshTokenSchema";
+import {RefreshToken, IRefreshTokenModel} from "../models/tokenModel/RefreshTokenSchema";
 import IRefreshToken from "../models/tokenModel/IRefreshToken";
 import {UnauthorizedError} from "typescript-rest/dist/server-errors";
-import {ResponseBuider} from "../shared/response";
 const env: IENV = require("../environment/dev.json");
 
 export default class TokenController {
@@ -53,5 +52,9 @@ export default class TokenController {
             token: accessToken,
             refreshToken: refreshToken.refreshToken
         };
+    }
+
+    public static async signOut(token: string): Promise<void> {
+       await RefreshToken.deleteOne({refreshToken: token});
     }
 }

@@ -1,8 +1,6 @@
-import {GET, Path, POST, QueryParam} from 'typescript-rest';
+import {Path, POST} from 'typescript-rest';
 import {IUserModel, User} from "../models/userModel/UserSchema";
 import {AuthRegistrationController} from "../controllers/AuthRegistrationController";
-import {ErrorStatuses, RegistrationTypes} from "../shared/enums";
-import {ErrorHandler} from "../shared/errorHandler";
 import {ResponseBuider, Response} from "../shared/response";
 import {SandEmailMessage} from "../shared/utils";
 import {IENV} from "../environment/ienv";
@@ -87,5 +85,12 @@ export default class AuthRegistration {
         });
 
         return responce;
+    }
+
+    @Path("/signOut")
+    @POST
+    public async signOut(token: any): Promise<Response> {
+        await TokenController.signOut(token.token);
+        return ResponseBuider.BuildResponse();
     }
 }

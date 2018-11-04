@@ -2,8 +2,6 @@ import {IUserModel, User} from "../models/userModel/UserSchema";
 import {compareDecriptedPassword, decryptPassword} from "../shared/utils";
 import {ErrorHandler} from "../shared/errorHandler";
 import {ErrorStatuses} from "../shared/enums";
-import {IENV} from "../environment/ienv";
-const env: IENV = require("../environment/dev.json");
 
 export class AuthRegistrationController {
     public async saveUser(user: IUserModel): Promise<IUserModel> {
