@@ -22,7 +22,7 @@ export let UserSchema: Schema = db.Schema({
         type: String,
         required: [true, "user surnamename required"]
     },
-    birthday: { type: Date },
+    birthday: { type: String },
     relationship: {
         idParthner: String,
         relationshipStatus: String
@@ -50,7 +50,8 @@ export let UserSchema: Schema = db.Schema({
     wall: [{ type: Object }],
     verified: { type: Boolean, default: false },
     createdAt: Date,
-    updatedAt: Date
+    updatedAt: Date,
+    verificationCode: String
 });
 
 export const User: Model<IUserModel> = model<IUserModel>("User", UserSchema);

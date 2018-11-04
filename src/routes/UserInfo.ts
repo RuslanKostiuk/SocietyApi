@@ -21,7 +21,7 @@ export default class UserInfo {
                 user: user
             })
         } catch (e) {
-            throw ErrorHandler.BuildError(e.statusCode || 500, e.message || e);
+            throw e;
         }
     }
 }

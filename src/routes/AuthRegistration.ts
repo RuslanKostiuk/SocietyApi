@@ -4,10 +4,11 @@ import {AuthRegistrationController} from "../controllers/AuthRegistrationControl
 import {ErrorStatuses, RegistrationTypes} from "../shared/enums";
 import {ErrorHandler} from "../shared/errorHandler";
 import {ResponseBuider, Response} from "../shared/response";
-import {generateToken, SandEmailMessage} from "../utils/utils";
+import {SandEmailMessage} from "../shared/utils";
 import {IENV} from "../environment/ienv";
-import S3Handler from "../utils/s3Handler";
+import S3Handler from "../shared/s3Handler";
 import {UnauthorizedError} from "typescript-rest/dist/server-errors";
+import TokenController from "../controllers/TokenController";
 
 const env: IENV = require("../environment/dev.json");
 
@@ -15,66 +16,76 @@ export default class AuthRegistration {
     private authRegCtrl: AuthRegistrationController = new AuthRegistrationController();
 
     @POST
-    @Path("/registration")
+    @Path("/signUp")
     public async registration(user: IUserModel): Promise<Response> {
         let response: Response;
         try {
-            let savedUser: IUserModel = await this.authRegCtrl.saveUser(user);
-            let mailMessage: string = "Дякуємо, що зареєструвалися в Львівській соціальній мережі \"Lviv Society\"." +
-                "Ми завжди раді новим людям. Щоб підтвердити реєстрацію будь ласка перейдіть по посиланню " +
-                env.host + env.port + env.mail.verification_link + savedUser._id;
-
+            let verificationCode: number = Math.floor(Math.random() * 100000);
+            user.verificationCode = verificationCode.toString();
+            await this.authRegCtrl.saveUser(user);
+            let mailMessage: string = "Thank you for registration in Society Social Network. Your verification code " + verificationCode;
             await SandEmailMessage(user.email, mailMessage, "Society email verification");
-            let message: string = `Дякуємо за реєстацію. На ваш email ${user.email} відправлено повідомлення. Перейдіть по посиланню щоб підтвердити ваш email`;
-            response = ResponseBuider.BuildResponse({message: message});
+            response = ResponseBuider.BuildResponse("SENT");
             return response;
         } catch (e) {
-            let error: Error;
-            if (e.errorStatus === ErrorStatuses.saveError || e.errorStatus === ErrorStatuses.emailError) {
-                error = ErrorHandler.BuildError(ErrorStatuses.registrationError, e.message);
-            } else {
-                error = ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);
-            }
-            throw error;
+            throw e;
         }
     }
 
-    @GET
+    @POST
     @Path("/verify")
-    public async verify(@QueryParam("token") token: string): Promise<Response> {
+    public async verify({email, code}): Promise<Response> {
         let response: Response;
         let s3: S3Handler = new S3Handler();
+        let user: IUserModel;
         try {
-            let user: IUserModel = await  User.findByIdAndUpdate(token, { verified: true });
-            if (user) {
-                response = ResponseBuider.BuildResponse();
-                await s3.createBucket(user._id);
-                user.password = "";
-                response = ResponseBuider.BuildResponse("<h1>Registration complete<h1>");
-                return response;
-            }
+            user = await User.findOneAndUpdate(
+                {
+                    email: email,
+                    verificationCode: code
+                },
+                {verified: true});
         } catch (e) {
-            throw ErrorHandler.BuildError(ErrorStatuses.unknown, e.message);
+            throw e;
         }
+
+        if (!user) {
+            throw new Error("Verification codes do not match");
+        }
+
+        try {
+            await s3.createBucket(user._id);
+        } catch (e) {
+            throw e;
+        }
+        response = ResponseBuider.BuildResponse({
+            token: TokenController.generateToken(user._id),
+            refreshToken: await TokenController.generateRefreshToken(user._id)
+        });
+
+        return response;
     }
 
     @Path("/signIn")
     @POST
     public async authenticate(authData: { email: string, password: string }): Promise<Response> {
-        try {
-            let responce: Response;
-            const user: IUserModel = await this.authRegCtrl.authenticateUser(authData.email, authData.password);
-            if (!user.verified) {
-                throw new UnauthorizedError();
-            } else {
-                responce = ResponseBuider.BuildResponse({
-                    token: generateToken(user._id)
-                });
+        let responce: Response;
+        let user: IUserModel;
 
-                return responce;
-            }
+        try {
+            user = await this.authRegCtrl.authenticateUser(authData.email, authData.password);
         } catch (e) {
-            throw ErrorHandler.BuildError(ErrorStatuses.notVerified, e);
+            throw e;
         }
+
+        if (!user.verified) {
+            throw new UnauthorizedError();
+        }
+        responce = ResponseBuider.BuildResponse({
+            token: TokenController.generateToken(user._id),
+            refreshToken: await TokenController.generateRefreshToken(user._id)
+        });
+
+        return responce;
     }
 }

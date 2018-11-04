@@ -5,7 +5,7 @@ export interface IUser {
     password: string,
     firstName: string,
     lastName: string,
-    birthday: Date,
+    birthday: string,
     relationship: {
         idParthner: string,
         relationshipStatus: RelationshipStatuses
@@ -17,7 +17,7 @@ export interface IUser {
         street: string,
         houseNumber: string
     },
-    friends:[{
+    friends: [{
         idFriend: string,
         friendInviteStatus: FriendIviteStatuses
     }],
@@ -28,4 +28,5 @@ export interface IUser {
     verified: boolean;
     createdAt: Date;
     updatedAt: Date;
+    verificationCode: string;
 }

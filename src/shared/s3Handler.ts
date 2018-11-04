@@ -1,7 +1,7 @@
 import * as AWS from "aws-sdk";
-import {ErrorHandler} from "../shared/errorHandler";
-import {ErrorStatuses} from "../shared/enums";
-import {FileOptions} from "../shared/types";
+import {ErrorHandler} from "./errorHandler";
+import {ErrorStatuses} from "./enums";
+import {FileOptions} from "./types";
 
 export default class S3Handler {
     private s3: AWS.S3;

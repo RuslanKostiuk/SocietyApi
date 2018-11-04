@@ -1,10 +1,8 @@
 import * as bcrypt from "bcrypt";
 import * as nodemailer from "nodemailer";
-import {ErrorHandler} from "../shared/errorHandler";
-import {ErrorStatuses} from "../shared/enums";
+import {ErrorHandler} from "./errorHandler";
+import {ErrorStatuses} from "./enums";
 import {IENV} from "../environment/ienv";
-import * as jwt from 'jsonwebtoken';
-
 const env: IENV = require("../environment/dev.json");
 const saltRounds: number = 10;
 
@@ -38,12 +36,4 @@ export async function SandEmailMessage(recipientEmail: string, message: string, 
     } catch (e) {
         throw ErrorHandler.BuildError(ErrorStatuses.emailError, e.message);
     }
-}
-
-export function generateToken(userId: string): string {
-    let payload: any = {
-        id: userId
-    };
-
-    return jwt.sign(payload, env.user_secret);
 }

@@ -15,7 +15,7 @@ export default class JWTPassport {
         let JwtStrategy = passportJWT.Strategy;
 
         this.jwtOptions["jwtFromRequest"] = ExtractJwt.fromAuthHeaderAsBearerToken();
-        this.jwtOptions["secretOrKey"] = env.user_secret;
+        this.jwtOptions["secretOrKey"] = env.token.user_secret;
 
         let strategy = new JwtStrategy(this.jwtOptions, async (jwtPayload, next) => {
             try {

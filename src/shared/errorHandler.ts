@@ -1,19 +1,6 @@
 import {ErrorStatuses} from "./enums";
 import {UnauthorizedError} from "typescript-rest/dist/server-errors";
 
-// export class SocietyError extends Error {
-//     errorStatus: ErrorStatuses;
-//
-//     constructor(errorStasus: ErrorStatuses, message?: string) {
-//         if (message) {
-//             super(message);
-//         } else {
-//             super(errorStasus);
-//         }
-//         this.errorStatus = errorStasus;
-//     }
-// }
-
 export class ErrorHandler {
     public static BuildError(errorStatus: ErrorStatuses, error?: Error): Error {
         console.log(errorStatus);
@@ -37,6 +24,8 @@ export class ErrorHandler {
                 e = error;
                 break;
         }
+
+        Object.assign(e, errorStatus);
 
         return e || error;
     }
