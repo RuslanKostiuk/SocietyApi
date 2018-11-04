@@ -8,7 +8,7 @@ export class UserController {
             let user: IUserModel = await User.findById(userId);
             return user;
         } catch (e) {
-            throw e;
+            throw ErrorHandler.BuildError(ErrorStatuses.dbError, e);
         }
     }
 }

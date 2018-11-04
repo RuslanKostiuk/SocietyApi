@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e1053d1-86b8-485c-af42-40c36e516d36" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/TokenController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/TokenController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/AuthRegistration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/AuthRegistration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/UserController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UserController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/enums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/enums.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/errorHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/errorHandler.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,38 +20,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthRegistration.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/AuthRegistration.ts">
+      <file leaf-file-name="enums.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shared/enums.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="91" column="57" selection-start-line="91" selection-start-column="57" selection-end-line="91" selection-end-column="57" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="323">
+              <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthRegistrationController.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts">
+      <file leaf-file-name="errorHandler.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/shared/errorHandler.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#64#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TokenController.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TokenController.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/TokenController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+            <state relative-caret-position="404">
+              <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/UserController.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -96,7 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/models/userModel/IUserModel.ts" />
         <option value="$PROJECT_DIR$/src/shared/types.ts" />
@@ -110,7 +113,6 @@
         <option value="$PROJECT_DIR$/src/models/conversationModel/IConversation.ts" />
         <option value="$PROJECT_DIR$/src/models/conversationModel/ConversationSchema.ts" />
         <option value="$PROJECT_DIR$/src/utils/utils.ts" />
-        <option value="$PROJECT_DIR$/src/shared/enums.ts" />
         <option value="$PROJECT_DIR$/src/routes/authRegistration/registration.ts" />
         <option value="$PROJECT_DIR$/src/routes/authRegistration/authentication.ts" />
         <option value="$PROJECT_DIR$/src/controllers/user.ts" />
@@ -128,7 +130,6 @@
         <option value="$PROJECT_DIR$/src/server.ts" />
         <option value="$PROJECT_DIR$/src/models/userModel/IUser.ts" />
         <option value="$PROJECT_DIR$/src/models/userModel/UserSchema.ts" />
-        <option value="$PROJECT_DIR$/src/shared/errorHandler.ts" />
         <option value="$PROJECT_DIR$/src/environment/ienv.ts" />
         <option value="$PROJECT_DIR$/src/models/tokenModel.ts" />
         <option value="$PROJECT_DIR$/src/models/tokenModel/TokenSchema.ts" />
@@ -144,9 +145,12 @@
         <option value="$PROJECT_DIR$/src/models/tokenModel/RefreshTokenSchema.ts" />
         <option value="$PROJECT_DIR$/src/routes/UserInfo.ts" />
         <option value="$PROJECT_DIR$/src/routes/Token.ts" />
-        <option value="$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts" />
         <option value="$PROJECT_DIR$/src/routes/AuthRegistration.ts" />
+        <option value="$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts" />
         <option value="$PROJECT_DIR$/src/controllers/TokenController.ts" />
+        <option value="$PROJECT_DIR$/src/controllers/UserController.ts" />
+        <option value="$PROJECT_DIR$/src/shared/enums.ts" />
+        <option value="$PROJECT_DIR$/src/shared/errorHandler.ts" />
       </list>
     </option>
   </component>
@@ -187,13 +191,7 @@
               <item name="SocietyApiTypeScript" type="b2602c69:ProjectViewProjectNode" />
               <item name="SocietyApiTypeScript" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SocietyApiTypeScript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SocietyApiTypeScript" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -329,25 +327,25 @@
       <workItem from="1539115151565" duration="21892000" />
       <workItem from="1540307139978" duration="8110000" />
       <workItem from="1541090062760" duration="7180000" />
-      <workItem from="1541184384791" duration="22216000" />
+      <workItem from="1541184384791" duration="25319000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181646000" />
+    <option name="totallyTimeSpent" value="184749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="5" weight="0.32919255" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20486936" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20486936" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32919255" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32919255" />
-      <window_info active="true" anchor="bottom" id="Run" order="7" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.32919255" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.33913043" />
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -544,20 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/errorHandler.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/enums.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/environment/ienv.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -719,23 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/passport.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/UserController.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="63" lean-forward="true" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/Token.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -756,10 +723,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/passport.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/AuthRegistrationController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="46" selection-start-line="3" selection-start-column="46" selection-end-line="3" selection-end-column="46" />
+        <state relative-caret-position="221">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
           </folding>
@@ -768,11 +745,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/TokenController.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="57" column="7" selection-start-line="57" selection-start-column="7" selection-end-line="57" selection-end-column="7" />
+        <state relative-caret-position="404">
+          <caret line="70" column="68" selection-start-line="70" selection-start-column="68" selection-end-line="70" selection-end-column="68" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/UserController.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/enums.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/errorHandler.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="22" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
         </state>
       </provider>
     </entry>

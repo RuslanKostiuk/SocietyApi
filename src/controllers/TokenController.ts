@@ -4,6 +4,8 @@ import uuid = require('uuid/v4');
 import {RefreshToken, IRefreshTokenModel} from "../models/tokenModel/RefreshTokenSchema";
 import IRefreshToken from "../models/tokenModel/IRefreshToken";
 import {UnauthorizedError} from "typescript-rest/dist/server-errors";
+import {ErrorHandler} from "../shared/errorHandler";
+import {ErrorStatuses} from "../shared/enums";
 const env: IENV = require("../environment/dev.json");
 
 export default class TokenController {
@@ -16,21 +18,25 @@ export default class TokenController {
     }
 
     public static async generateRefreshToken(userId: string): Promise<string> {
-        let token: string = uuid();
-        let createdDate: string = new Date().toLocaleString();
-        let refreshToken: IRefreshTokenModel = new RefreshToken({
-            idUser: userId,
-            refreshToken: token,
-            createdDate: createdDate
-        });
-        await refreshToken.save();
-        return token;
+        try {
+            let token: string = uuid();
+            let createdDate: string = new Date().toLocaleString();
+            let refreshToken: IRefreshTokenModel = new RefreshToken({
+                idUser: userId,
+                refreshToken: token,
+                createdDate: createdDate
+            });
+            await refreshToken.save();
+            return token;
+        } catch (e) {
+            throw ErrorHandler.BuildError(ErrorStatuses.dbError, e);
+        }
     }
 
     public static async renewToken(token): Promise<any> {
         let refreshToken: IRefreshToken = await RefreshToken.findOne({refreshToken: token});
         if (!refreshToken) {
-            throw new UnauthorizedError();
+            throw ErrorHandler.BuildError(ErrorStatuses.authError, new UnauthorizedError());
         }
 
         let createdTime: number = new Date(refreshToken.createdDate).getTime();
@@ -39,13 +45,17 @@ export default class TokenController {
         let lifeTime: number = Number(env.token.refresh_user_secret_life) * 24 * 60;
 
         if (timeDiff > lifeTime) {
-            throw new UnauthorizedError();
+            throw ErrorHandler.BuildError(ErrorStatuses.authError, new UnauthorizedError());
         }
 
         let oldKey: string = refreshToken.refreshToken;
         refreshToken.refreshToken = uuid();
         refreshToken.createdDate = new Date().toLocaleString();
-        await RefreshToken.findOneAndUpdate({refreshToken: oldKey}, refreshToken);
+        try {
+            await RefreshToken.findOneAndUpdate({refreshToken: oldKey}, refreshToken);
+        } catch (e) {
+            throw ErrorHandler.BuildError(ErrorStatuses.dbError, e);
+        }
         let accessToken: string = TokenController.generateToken(refreshToken.idUser);
 
         return {
@@ -55,6 +65,10 @@ export default class TokenController {
     }
 
     public static async signOut(token: string): Promise<void> {
-       await RefreshToken.deleteOne({refreshToken: token});
+        try {
+            await RefreshToken.deleteOne({refreshToken: token});
+        } catch (e) {
+            throw ErrorHandler.BuildError(ErrorStatuses.dbError, e);
+        }
     }
 }

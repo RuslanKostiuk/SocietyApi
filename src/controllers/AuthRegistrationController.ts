@@ -12,24 +12,24 @@ export class AuthRegistrationController {
                     new: true
                 });
         } catch (e) {
-            throw e;
+            throw ErrorHandler.BuildError(ErrorStatuses.authError, e);
         }
     }
 
     public async authenticateUser(email, password): Promise<IUserModel> {
         let foundUser: IUserModel = await User.findOne({email});
         if (!foundUser) {
-             throw ErrorHandler.BuildError(ErrorStatuses.userNotFound);
+             throw ErrorHandler.BuildError(ErrorStatuses.authError, new Error("Email does not exist"));
         }
 
         let isCorrectPassword: boolean = await compareDecriptedPassword(foundUser.password, password);
 
         if (!isCorrectPassword) {
-            throw ErrorHandler.BuildError(ErrorStatuses.passwordNotCorrect);
+            throw ErrorHandler.BuildError(ErrorStatuses.authError, new Error("Password not correct"));
         }
 
         if (!foundUser.verified) {
-            throw ErrorHandler.BuildError(ErrorStatuses.notVerified);
+            throw ErrorHandler.BuildError(ErrorStatuses.notVerified, new Error("Email not confirmed"));
         }
 
         return foundUser;
