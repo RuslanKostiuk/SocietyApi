@@ -4,18 +4,6 @@ import {ErrorHandler} from "../shared/errorHandler";
 import {ErrorStatuses} from "../shared/enums";
 
 export class AuthRegistrationController {
-    public async saveUser(user: IUserModel): Promise<IUserModel> {
-        try {
-            user.password = await decryptPassword(user.password);
-            return User.findOneAndUpdate({email: user.email, verified: false}, user, {
-                    upsert: true,
-                    new: true
-                });
-        } catch (e) {
-            throw ErrorHandler.BuildError(ErrorStatuses.authError, e);
-        }
-    }
-
     public async authenticateUser(email, password): Promise<IUserModel> {
         let foundUser: IUserModel = await User.findOne({email});
         if (!foundUser) {

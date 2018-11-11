@@ -7,11 +7,13 @@ import {IENV} from "../environment/ienv";
 import S3Handler from "../shared/s3Handler";
 import {UnauthorizedError} from "typescript-rest/dist/server-errors";
 import TokenController from "../controllers/TokenController";
+import {UserController} from "../controllers/UserController";
 
 const env: IENV = require("../environment/dev.json");
 
 export default class AuthRegistration {
     private authRegCtrl: AuthRegistrationController = new AuthRegistrationController();
+    private userCtrl: UserController = new UserController();
 
     @POST
     @Path("/signUp")
@@ -20,7 +22,7 @@ export default class AuthRegistration {
         try {
             let verificationCode: number = Math.floor(Math.random() * 100000);
             user.verificationCode = verificationCode.toString();
-            await this.authRegCtrl.saveUser(user);
+            await this.userCtrl.save(user);
             let mailMessage: string = "Thank you for registration in Society Social Network. Your verification code " + verificationCode;
             await SandEmailMessage(user.email, mailMessage, "Society email verification");
             response = ResponseBuider.BuildResponse("SENT");

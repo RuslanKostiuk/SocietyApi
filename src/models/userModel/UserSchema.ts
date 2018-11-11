@@ -51,6 +51,7 @@ export let UserSchema: Schema = db.Schema({
     verified: { type: Boolean, default: false },
     createdAt: Date,
     updatedAt: Date,
+    avatar: String,
     verificationCode: String
 });
 

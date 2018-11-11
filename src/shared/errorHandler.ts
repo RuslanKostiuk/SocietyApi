@@ -3,9 +3,9 @@ import {UnauthorizedError} from "typescript-rest/dist/server-errors";
 
 export class ErrorHandler {
     public static BuildError(errorStatus: ErrorStatuses, error?: Error): Error {
-        if (error) {
-            error["errorStatus"] = errorStatus;
-        }
+        // if (error) {
+        //     error["errorStatus"] = errorStatus;
+        // }
 
         switch (errorStatus) {
             case ErrorStatuses.dbError:

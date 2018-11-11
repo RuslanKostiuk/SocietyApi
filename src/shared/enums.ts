@@ -18,4 +18,5 @@ export enum ErrorStatuses {
     unknown = "Unexpected error",
     s3Error = "s3 Error",
     notVerified = "Email not comfirmed",
+    emailError= "Email error"
 }

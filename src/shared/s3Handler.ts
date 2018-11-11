@@ -17,7 +17,7 @@ export default class S3Handler {
         })
     }
 
-    public async saveToBucket(data: Buffer, fileOptions: FileOptions): Promise<string> {
+    public async saveToBucket(data: any, fileOptions: FileOptions): Promise<string> {
         let bucketPrefix: string = `/storrage/${fileOptions.bucket}`;
 
         try {

@@ -29,4 +29,5 @@ export interface IUser {
     createdAt: Date;
     updatedAt: Date;
     verificationCode: string;
+    avatar: string;
 }
