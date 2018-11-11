@@ -1,9 +1,10 @@
 export interface IPhoto {
     path: string,
     creationDate: Date,
-    idAlbum: string,
-    idsComments: Array<string>,
+    comments: Array<{
+        idUser: string,
+        text: string
+    }>,
     likes: Array<string>,
     isCurrent: boolean
-    idUser: string
 }

@@ -1,4 +1,5 @@
 import {FriendIviteStatuses, RelationshipStatuses} from "../../shared/enums";
+import {IAlbum} from "../albumModel/IAlbum";
 
 export interface IUser {
     email: string,
@@ -21,10 +22,9 @@ export interface IUser {
         idFriend: string,
         friendInviteStatus: FriendIviteStatuses
     }],
-    conversatinsIds: Array<string>,
-    videos: string,
     gender: string,
-    wall: any,
+    albums: IAlbum[],
+    wall: any[],
     verified: boolean;
     createdAt: Date;
     updatedAt: Date;
