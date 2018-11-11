@@ -1,6 +1,6 @@
-import { Document, Schema, Model, model} from "mongoose";
+import {Document, Schema, Model, model} from "mongoose";
 import {IUser} from "./IUser";
-import {Album} from "../albumModel/AlbumSchema";
+import {AlbumSchema} from "../albumModel/AlbumSchema";
 const db = require("../../shared/dbConnection");
 
 export interface IUserModel extends IUser, Document {}
@@ -46,7 +46,7 @@ export let UserSchema: Schema = db.Schema({
         friendInviteStatus: { type: Number }
     }],
     gender: { type: String },
-    albums: [Album],
+    albums: [AlbumSchema],
     wall: [{ type: Object }],
     verified: { type: Boolean, default: false },
     createdAt: Date,

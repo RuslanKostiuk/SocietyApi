@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e1053d1-86b8-485c-af42-40c36e516d36" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/albumModel/IAlbum.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/albomModel/AlbomSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/albumModel/AlbumSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/albomModel/IAlbom.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/photoModel/IPhoto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/photoModel/IPhoto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/photoModel/PhotoSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/photoModel/PhotoSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/userModel/IUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/userModel/IUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/albumModel/AlbumSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/albumModel/AlbumSchema.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/userModel/UserSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/userModel/UserSchema.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserSchema.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserSchema.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/userModel/UserSchema.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            <state>
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -44,11 +38,8 @@
       <file leaf-file-name="AlbumSchema.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/albumModel/AlbumSchema.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -62,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotoSchema.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PhotoSchema.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/photoModel/PhotoSchema.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -170,8 +161,8 @@
         <option value="$PROJECT_DIR$/src/models/photoModel/PhotoSchema.ts" />
         <option value="$PROJECT_DIR$/src/models/albumModel/IAlbom.ts" />
         <option value="$PROJECT_DIR$/src/models/albumModel/AlbomSchema.ts" />
-        <option value="$PROJECT_DIR$/src/models/albumModel/AlbumSchema.ts" />
         <option value="$PROJECT_DIR$/src/models/userModel/IUser.ts" />
+        <option value="$PROJECT_DIR$/src/models/albumModel/AlbumSchema.ts" />
         <option value="$PROJECT_DIR$/src/models/userModel/UserSchema.ts" />
       </list>
     </option>
@@ -214,6 +205,13 @@
               <item name="SocietyApiTypeScript" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SocietyApiTypeScript" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SocietyApiTypeScript" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="userModel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SocietyApiTypeScript" type="b2602c69:ProjectViewProjectNode" />
@@ -326,8 +324,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.run" />
         <item itemvalue="npm.start-node" />
         <item itemvalue="npm.watch-ts" />
@@ -361,24 +359,25 @@
       <workItem from="1539115151565" duration="21892000" />
       <workItem from="1540307139978" duration="8110000" />
       <workItem from="1541090062760" duration="7180000" />
-      <workItem from="1541184384791" duration="48408000" />
+      <workItem from="1541184384791" duration="49552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207838000" />
+    <option name="totallyTimeSpent" value="208982000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="5" weight="0.32919255" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20486936" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="6" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.32919255" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32919255" />
-      <window_info anchor="bottom" id="Run" order="7" weight="0.32919255" />
+      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.32919255" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.33913043" />
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -436,21 +435,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/models/userModel/IUserModel.ts" />
-    <entry file="file://$PROJECT_DIR$/src/modules/mongoose.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/conversationModel/IConversation.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/routes/authRegistration/authentication.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -779,27 +763,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/userModel/UserSchema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/albumModel/IAlbum.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/albumModel/AlbumSchema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="40" lean-forward="true" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,10 +777,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mongoose/lib/schema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="632" column="14" selection-start-line="632" selection-start-column="14" selection-end-line="632" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/models/userModel/UserSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/models/albumModel/AlbumSchema.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/albumModel/AlbumSchema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/photoModel/PhotoSchema.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="12" column="7" lean-forward="true" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/userModel/UserSchema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
