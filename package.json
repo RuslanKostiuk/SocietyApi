@@ -14,6 +14,7 @@
     "cors": "^2.8.4",
     "fs": "0.0.1-security",
     "http": "^0.0.0",
+    "install": "^0.12.2",
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.1.5",
     "nodemailer": "^4.6.7",
@@ -23,6 +24,7 @@
     "path": "^0.12.7",
     "q": "^1.5.1",
     "routes": "^2.1.0",
+    "socket.io": "^2.1.1",
     "typescript-ioc": "^1.2.4",
     "typescript-rest": "^1.6.1"
   },

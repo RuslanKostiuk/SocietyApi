@@ -7,6 +7,7 @@ import * as bodyParser from "body-parser";
 import routes from "./routes/Routes";
 import {IENV} from "./environment/ienv";
 import JWTPassport from "./controllers/passport";
+import {socket} from "./shared/socket";
 
 const env: IENV = require("./environment/dev.json");
 
@@ -56,6 +57,8 @@ export class ApiServer {
                 }
                 // tslint:disable-next-line:no-console
                 console.log(`Listening on port: ${this.PORT}`);
+
+                socket.start();
                 return resolve();
             });
         });

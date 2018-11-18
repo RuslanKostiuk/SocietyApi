@@ -35,4 +35,4 @@ export default class UserInfo {
           throw e;
         }
     }
-}
+};
