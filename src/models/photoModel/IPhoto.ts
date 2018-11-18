@@ -1,6 +1,6 @@
 export interface IPhoto {
     path: string,
-    creationDate: Date,
+    creationDate: string,
     comments: Array<{
         idUser: string,
         text: string
