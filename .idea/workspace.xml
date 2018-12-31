@@ -2,21 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e1053d1-86b8-485c-af42-40c36e516d36" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controllers/EventController.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/Event.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/IController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/DbController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/DbController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/UserController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UserController.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/conversationModel/ConversationSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/conversationModel/ConversationSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/conversationModel/IConversation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/conversationModel/IConversation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/eventModel/EventSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/eventModel/EventSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/eventModel/IEvent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/eventModel/IEvent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/photoModel/IPhoto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/photoModel/IPhoto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/photoModel/PhotoSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/photoModel/PhotoSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Events.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/response.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -103,16 +88,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="response.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="response.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/shared/response.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+            <state relative-caret-position="102">
+              <caret line="6" column="77" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventSchema.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventSchema.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/eventModel/EventSchema.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -236,8 +221,8 @@
         <option value="$PROJECT_DIR$/src/controllers/EventController.ts" />
         <option value="$PROJECT_DIR$/src/models/eventModel/IEvent.ts" />
         <option value="$PROJECT_DIR$/src/routes/Event.ts" />
-        <option value="$PROJECT_DIR$/src/shared/response.ts" />
         <option value="$PROJECT_DIR$/src/models/eventModel/EventSchema.ts" />
+        <option value="$PROJECT_DIR$/src/shared/response.ts" />
       </list>
     </option>
   </component>
@@ -438,26 +423,27 @@
       <workItem from="1543141239171" duration="15019000" />
       <workItem from="1543867363761" duration="10271000" />
       <workItem from="1546194465084" duration="1618000" />
-      <workItem from="1546247392963" duration="4595000" />
+      <workItem from="1546247392963" duration="4822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267412000" />
+    <option name="totallyTimeSpent" value="267639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="5" weight="0.32919255" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20665084" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20665084" />
       <window_info anchor="bottom" id="TODO" order="11" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.32919255" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32919255" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.32919255" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.33913043" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.33913043" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.39875776" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -859,13 +845,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shared/response.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/Event.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -890,6 +869,13 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/response.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="77" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="77" />
         </state>
       </provider>
     </entry>
