@@ -26,6 +26,10 @@ export class ApiServer {
         this.app.use("/user", this.jwt.getPassport().authenticate("jwt", {
                 session: false
             }));
+
+        this.app.use("/event", this.jwt.getPassport().authenticate("jwt", {
+            session: false
+        }));
         Server.useIoC();
         Server.buildServices(this.app, ...routes);
 

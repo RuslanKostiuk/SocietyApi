@@ -12,11 +12,16 @@ export let EventSchema: Schema = db.Schema({
     photos: [PhotoSchema],
     theme: String,
     likes: [String],
+    holdingDate: String,
     comments: [{
         idUser: String,
         text: String
     }],
-    creationDate: String
+    location: String,
+    createdAt: Date,
+    updatedAt: Date,
+    userId: String,
+    creatorAvatar: String
 });
 
 export const Event: Model<IEventModel> = model<IEventModel>("Event", EventSchema);

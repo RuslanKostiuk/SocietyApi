@@ -1,13 +1,12 @@
 import {IUserModel, User} from "../models/userModel/UserSchema";
-import {ErrorHandler} from "../shared/errorHandler";
-import {ErrorStatuses} from "../shared/enums";
 import {decryptPassword} from "../shared/utils";
 import DbController from "./DbController";
+import IController from "../shared/IController";
 
-export class UserController {
+export class UserController implements IController {
     private dbController: DbController<IUserModel> = new DbController<IUserModel>(User);
 
-    public async get(userId): Promise<IUserModel> {
+    public async get(userId: string): Promise<IUserModel> {
         return this.dbController.getById(userId);
     }
 
@@ -17,8 +16,12 @@ export class UserController {
         return this.dbController.saveOrUpdate(conditions, user);
     }
 
-    public async update(user: any, userId: string): Promise<IUserModel> {
-        return this.dbController.update(userId, user);
+    public async update(user: any, id: string): Promise<IUserModel> {
+        return this.dbController.update(id, user);
     }
 
+
+    public async getMany(data: string[]): Promise<IUserModel[]> {
+        return this.dbController.getMany({_id: data});
+    }
 }

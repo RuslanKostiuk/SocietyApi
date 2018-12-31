@@ -6,9 +6,14 @@ export interface IEvent {
     photos: IPhoto[];
     theme: string;
     likes: Array<string>;
+    holdingDate: string;
     comments: Array<{
         idUser: string,
         text: string
     }>,
-    creationDate: string;
+    location: string;
+    createdAt: Date;
+    updatedAt: Date;
+    userId: string;
+    creatorAvatar: string;
 }
