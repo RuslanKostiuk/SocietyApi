@@ -14,21 +14,21 @@ class Socket {
         httpServer.listen(3001);
 
         io.on("connection", function (client) {
-            client.use((socket, next) => {
-                let token: string = client.handshake.query.token;
-                jwt.verify(token, env.token.user_secret, function (error, decoded) {
-                    if (error) {
-                        next(new Error("INVALID_TOKEN"));
-                    } else {
-                        client.user = decoded;
-                        next();
-                    }
-                });
-            });
+            // client.use((socket, next) => {
+            //     let token: string = client.handshake.query.token;
+            //     jwt.verify(token, env.token.user_secret, function (error, decoded) {
+            //         if (error) {
+            //             next(new Error("INVALID_TOKEN"));
+            //         } else {
+            //             client.user = decoded;
+            //             next();
+            //         }
+            //     });
+            // });
 
             client.on("connection-status", function (data) {
-                let userId: string = client.user.id;
-                _this.userCtrl.update({isOnline: data}, userId);
+                let userId: string = data.userId;
+                _this.userCtrl.update({isOnline: data.isConnected}, userId);
             });
 
         });

@@ -57,7 +57,7 @@ export default class DbController<T> {
             return this.model
                 .find(conditions)
                 .sort({
-                    updatedAt: -1
+                    createdAt: -1
                 })
                 .limit(limit)
                 .skip(offset)
