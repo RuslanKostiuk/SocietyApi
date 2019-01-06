@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2e1053d1-86b8-485c-af42-40c36e516d36" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
-              <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+              <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -120,7 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.save</find>
       <find>from &quot;mo</find>
       <find>env.json</find>
       <find>h</find>
@@ -150,6 +148,7 @@
       <find>console.log</find>
       <find>query</find>
       <find>socket</find>
+      <find>.idea</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\user\Desktop\Society\src\environment</dir>
@@ -242,11 +241,6 @@
             <path>
               <item name="SocietyApiTypeScript" type="b2602c69:ProjectViewProjectNode" />
               <item name="SocietyApiTypeScript" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SocietyApiTypeScript" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SocietyApiTypeScript" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -387,12 +381,12 @@
       <workItem from="1543141239171" duration="15019000" />
       <workItem from="1543867363761" duration="10271000" />
       <workItem from="1546194465084" duration="1618000" />
-      <workItem from="1546247392963" duration="30787000" />
+      <workItem from="1546247392963" duration="31197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="293604000" />
+    <option name="totallyTimeSpent" value="294014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1721" height="935" extended-state="6" />
@@ -840,7 +834,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
-          <caret line="66" column="6" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="6" />
+          <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
         </state>
       </provider>
     </entry>
