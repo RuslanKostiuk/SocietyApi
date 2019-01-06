@@ -30,19 +30,23 @@ export default class Event {
 
     @Path("/update")
     @POST
-    public async update(data: {event: IEventModel, id: string}): Promise<Response> {
-        let updatedResult: IEventModel = await this.eventCtrl.update(data.event, data.id);
+    public async update(event: IEventModel): Promise<Response> {
+        let updatedResult: IEventModel = await this.eventCtrl.update(event, event._id);
         return ResponseBuider.BuildResponse(updatedResult);
     }
 
     @Path("/getMany")
     @GET
-    public async getMany(@QueryParam("limit") limit: string, @QueryParam("offset") offset: string): Promise<Response> {
-        let events: IEventModel[] = await this.eventCtrl.getMany({limit, offset});
+    public async getMany(@QueryParam("limit") limit: string, @QueryParam("offset") offset: string, @QueryParam("userId") userId: string): Promise<Response> {
+        let conditions: any = userId ? {userId: userId} : {};
+        let eventParams: any = {conditions, limit, offset};
+        let events: IEventModel[] = await this.eventCtrl.getMany(eventParams);
         let authorsIds: string[] = events.map(event =>  event.userId);
         let authors: IUserModel[] = await this.userCtrl.getMany(authorsIds);
         events.forEach((event: IEventModel) => {
-           event.creatorAvatar = authors.find(author => author._id == event.userId).avatar;
+            let author: IUserModel = authors.find(author => author._id == event.userId);
+            event.creatorAvatar = author.avatar;
+            event.creatorName = `${author.lastName} ${author.firstName}`;
         });
         return ResponseBuider.BuildResponse(events);
     }

@@ -21,7 +21,7 @@ export default class DbController<T> {
 
     public async saveOrUpdate(conditions: any, data: T): Promise<T> {
         try {
-            data["updatedAt"] = data["createdAt"] = new Date();
+            data["updatedAt"] = data["createdAt"] = new Date().getTime();
             return await this.model.findOneAndUpdate(conditions, data, {
                 upsert: true,
                 new: true
@@ -34,7 +34,7 @@ export default class DbController<T> {
     public async update(id: string, data: T): Promise<T> {
         try {
             if (!data["refreshToken"]) {
-                data["updatedAt"] = new Date();
+                data["updatedAt"] = new Date().getTime();
             }
 
             return this.model.findByIdAndUpdate(id, data);
@@ -45,6 +45,7 @@ export default class DbController<T> {
 
     public async save(entity: T): Promise<T> {
         try {
+            entity["updatedAt"] = entity["createdAt"] = new Date().getTime();
             return this.model.create(entity);
         } catch (e) {
             throw ErrorHandler.BuildError(ErrorStatuses.dbError, e);
@@ -56,7 +57,7 @@ export default class DbController<T> {
             return this.model
                 .find(conditions)
                 .sort({
-                    updatedAt: 1
+                    updatedAt: -1
                 })
                 .limit(limit)
                 .skip(offset)

@@ -21,8 +21,7 @@ export default class EventController implements IController{
     public getMany(data: any): Promise<IEventModel[]> {
         let offset: number = parseInt(data.offset);
         let limit: number = parseInt(data.limit);
-        let conditions: any = data.coditions || {};
-
+        let conditions: any = data.conditions || {};
         return this.db.getMany(conditions, limit, offset);
     }
 

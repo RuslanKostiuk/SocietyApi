@@ -21,7 +21,8 @@ export let EventSchema: Schema = db.Schema({
     createdAt: Date,
     updatedAt: Date,
     userId: String,
-    creatorAvatar: String
+    creatorAvatar: String,
+    creatorName: String
 });
 
 export const Event: Model<IEventModel> = model<IEventModel>("Event", EventSchema);

@@ -16,4 +16,5 @@ export interface IEvent {
     updatedAt: Date;
     userId: string;
     creatorAvatar: string;
+    creatorName: string;
 }
